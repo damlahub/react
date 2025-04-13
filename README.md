@@ -15,9 +15,59 @@ node --version
 ## # first-app
 ###  * Proje Oluşturma
 VSCode > Terminal > New Terminal
+```bash
+npx create-react-app project-name
+cd project-name
+npm start
+```
+### * Proje Yapısı
+📁 public/
+- Statik varlıkları barındırır.
+- Tarayıcıya sunulur.
+public > index.html
+```html
+<div id="root"></div>
+```
+JavaScript ile dinamik olarak içerik eklenecek olan ana kapsayıcı (container) elemandır. Uygulama bu elementin içinde yaşar.
 
-`npx create-react-app project-name`
+📁 node_modules/
 
-`cd project-name`
+Projedeki tüm kurulu paketlerin yer aldığı klasördür.
 
-`npm start`
+📁 src/
+
+Tüm React bileşenlerinin, stillerinin ve mantığının bulunduğu ana klasör.
+
+📁 components/
+
+Kendi oluşturduğumuz küçük bileşenleri (component) koyduğumuz yerdir.
+
+📄 package.json
+Projeye ait tüm bilgileri içerir:
+
+Proje adı, versiyon, bağımlılıklar, script'ler vs.
+
+###  * Greeting.jsx
+src > components (New Folder) > Greeting.jsx (New File)
+```javascript
+//Greeting.jsx
+import React from 'react'
+
+const Greeting = () => {
+  return (
+    <div>My First Component</div>
+  )
+}
+
+export default Greeting;
+```
+src > App.js
+```javascript
+function App() {
+  return (
+    <div className="App">
+      <Greeting/>
+    </div>
+  );
+}
+```
